@@ -1,4 +1,4 @@
-async function TeamPage({ params }: { params: { school: string; team: string } }) {
+async function TeamPage({ params }: { params: Promise<{ school: string; team: string }> }) {
   const school = (await params).school;
   const team = (await params).team;
 
