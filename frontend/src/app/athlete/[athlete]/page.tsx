@@ -1,4 +1,4 @@
-async function AthletePage({ params }: { params: { athlete: string } }) {
+async function AthletePage({ params }: { params: Promise<{ athlete: string }> }) {
   const athlete = (await params).athlete;
 
   return <p>{athlete}</p>;

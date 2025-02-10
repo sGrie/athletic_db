@@ -1,4 +1,4 @@
-async function CompetitionPage({ params }: { params: { competition: string } }) {
+async function CompetitionPage({ params }: { params: Promise<{ competition: string }> }) {
   const competition = (await params).competition;
 
   return <p>{competition}</p>;

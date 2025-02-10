@@ -1,4 +1,4 @@
-async function SchoolPage({ params }: { params: { school: string } }) {
+async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
   const school = (await params).school;
 
   return <p>{school}</p>;
