@@ -1,7 +1,16 @@
-async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
-  const school = (await params).school;
+import NotFound from '@/components/NotFound';
 
-  return <p>{school}</p>;
+import { getSchool } from '@/actions/school';
+
+async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
+  const schoolId = (await params).school;
+
+  const school = await getSchool(schoolId);
+  if (!school) {
+    return <NotFound />;
+  }
+
+  return <p>{schoolId}</p>;
 }
 
 export default SchoolPage;

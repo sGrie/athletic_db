@@ -1,10 +1,19 @@
+import NotFound from '@/components/NotFound';
+
+import { getEvent } from '@/actions/event';
+
 async function EventPage({ params }: { params: Promise<{ competition: string; event: string }> }) {
-  const competition = (await params).competition;
-  const event = (await params).event;
+  const competitionId = (await params).competition;
+  const eventId = (await params).event;
+
+  const event = await getEvent(competitionId, eventId);
+  if (!event) {
+    return <NotFound />;
+  }
 
   return (
     <p>
-      {competition}/{event}
+      {competitionId}/{eventId}
     </p>
   );
 }

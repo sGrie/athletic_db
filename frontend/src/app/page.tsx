@@ -12,6 +12,7 @@ function Home() {
           <li>/competition/123</li>
           <li>/competition/123/20m</li>
           <li>/school/123</li>
+          <li>/team/123</li>
         </ul>
       </div>
     </>
