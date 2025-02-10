@@ -25,7 +25,7 @@ function RootLayout({
     <html lang='en'>
       <body className={`${geistSans.variable} antialiased flex flex-col h-full`}>
         <Header />
-        <div className='max-w-[1400px] m-auto w-full flex-grow'>{children}</div>
+        {children}
         <Footer />
       </body>
     </html>
