@@ -1,15 +1,21 @@
 import Link from 'next/link';
 
+import { Button } from '@/components/ui/Button';
+
 function Header() {
   return (
-    <div className='bg-adb-blue-900 p-2 flex justify-center items-center gap-1'>
-      <div className='flex-grow text-adb-yellow'>
+    <div className='bg-foreground p-2 flex justify-center items-center gap-1'>
+      <div className='flex-grow text-primary'>
         <Link href='/'>
-          <h1 className='font-black text-lg'>AthleticDB</h1>
+          <h1 className='font-extrabold text-lg tracking-tight'>AthleticDB</h1>
         </Link>
       </div>
-      <div>
-        <p>Side</p>
+      <div className='flex gap-1'>
+        <Button variant='link' asChild>
+          <Link href='/admin'>Admin</Link>
+        </Button>
+        <Button variant='outline' disabled>Register</Button>
+        <Button disabled>Login</Button>
       </div>
     </div>
   );
