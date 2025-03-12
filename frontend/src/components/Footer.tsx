@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className='bg-gray-300 p-2 flex justify-center items-center flex-wrap gap-1'>
+    <div className='bg-adb-blue-950 p-2 flex justify-center items-center flex-wrap gap-1 text-white'>
       <div className='basis-[500px]'>
         <p>Side</p>
       </div>

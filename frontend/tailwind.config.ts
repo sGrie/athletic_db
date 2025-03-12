@@ -10,7 +10,10 @@ export default {
     extend: {
       colors: {
         background: 'var(--background)',
-        foreground: 'var(--foreground)'
+        foreground: 'var(--foreground)',
+        'adb-yellow': '#ffd400',
+        'adb-blue-900': '#1b2838',
+        'adb-blue-950': '#24364c'
       }
     }
   },
