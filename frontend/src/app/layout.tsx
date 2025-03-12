@@ -25,7 +25,7 @@ function RootLayout({
     <html lang='en'>
       <body className={`${geistSans.variable} antialiased flex flex-col h-full`}>
         <Header />
-        {children}
+        <div className='flex-grow'>{children}</div>
         <Footer />
       </body>
     </html>
