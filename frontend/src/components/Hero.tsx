@@ -14,7 +14,7 @@ function Hero() {
         </div>
       </div>
       {/* TODO: Change image. */}
-      <div className='w-full h-full bg-[url("https://picsum.photos/1000/800")] opacity-75'></div>
+      <div className='w-full h-full bg-[url("https://picsum.photos/1000/800")] opacity-75 bg-cover'></div>
     </div>
   );
 }
