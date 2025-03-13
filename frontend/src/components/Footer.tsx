@@ -1,14 +1,27 @@
 function Footer() {
   return (
-    <div className='bg-adb-blue-950 p-2 flex justify-center items-center flex-wrap gap-1 text-white'>
-      <div className='basis-[500px]'>
-        <p>Side</p>
+    <div className='bg-adb-blue-950 pt-8 pb-8 pl-4 pr-4 flex justify-center items-center flex-wrap gap-4 text-white'>
+      <div className='basis-[350] flex flex-col gap-2 h-[150px]'>
+        <h1 className='text-primary font-extrabold text-2xl'>AthleticDB</h1>
+        <p className="text-gray-400 text-sm">© 2025 All Rights Reserved</p>
       </div>
-      <div className='basis-[500px]'>
-        <p>Side</p>
+      <div className='basis-[350] flex flex-col gap-2 h-[150px]'>
+        <p className='text-primary font-bold'>About</p>
+        <p>Item</p>
+        <p>Item</p>
+        <p>Item</p>
       </div>
-      <div className='basis-[500px]'>
-        <p>Side</p>
+      <div className='basis-[350] flex flex-col gap-2 h-[150px]'>
+        <p className='text-primary font-bold'>More</p>
+        <p>Item</p>
+        <p>Item</p>
+        <p>Item</p>
+      </div>
+      <div className='basis-[350] flex flex-col gap-2 h-[150px]'>
+        <p className='text-primary font-bold'>Other</p>
+        <p>Item</p>
+        <p>Item</p>
+        <p>Item</p>
       </div>
     </div>
   );
