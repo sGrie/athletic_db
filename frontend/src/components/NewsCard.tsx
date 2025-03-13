@@ -5,11 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 function NewsCard({ title, description }: { title: string; description: string }) {
   return (
-    <Card className='w-full basis-[300px]'>
+    <Card className='w-full basis-[320px]'>
       <div className='aspect-w-4 aspect-h-5 relative'>
         <Image
           src='https://picsum.photos/400/200'
-          alt='Product'
+          alt='News Article'
           width={400}
           height={200}
           className='object-fill w-full'
