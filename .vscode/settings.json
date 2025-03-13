@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "frontend/.next": true,
+    "frontend/node_modules": true,
+    "frontend/.prettierrc.json": true,
+    "frontend/cspell.json": true,
+    "frontend/eslint.config.mjs": true,
+    "frontend/LICENSE": true,
+    "frontend/next-env.d.ts": true,
+    "frontend/next.config.ts": true,
+    "frontend/NEXT.md": true,
+    "frontend/postcss.config.mjs": true,
+    "frontend/tsconfig.json": true,
+  }
+}
