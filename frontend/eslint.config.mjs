@@ -16,7 +16,6 @@ const compat = new FlatCompat({
 });
 
 export default [
-  [globalIgnores(['tailwind.config.ts'])],
   ...compat.extends('next', 'next/core-web-vitals', 'prettier'),
   {
     plugins: {
