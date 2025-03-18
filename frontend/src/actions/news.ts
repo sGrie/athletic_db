@@ -9,6 +9,5 @@ const DEFAULT_NEWS: NewsArticle = {
 };
 
 export async function getNews(limit?: number): Promise<NewsArticle[]> {
-  // TODO: Fetch from API.
   return new Array(limit || 10).fill(DEFAULT_NEWS);
 }

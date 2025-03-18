@@ -35,3 +35,8 @@ export interface NewsArticle extends DatabaseEntity {
   description: string;
   image: string;
 }
+
+export interface APIResponse<T> {
+  code: number;
+  data: T;
+}

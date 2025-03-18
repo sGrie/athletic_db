@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    ".next": true,
+    "node_modules": true,
+    ".prettierrc.json": true,
+    "cspell.json": true,
+    "eslint.config.mjs": true,
+    "LICENSE": true,
+    "next-env.d.ts": true,
+    "next.config.ts": true,
+    "NEXT.md": true,
+    "postcss.config.mjs": true,
+    "tsconfig.json": true,
+  }
+}
