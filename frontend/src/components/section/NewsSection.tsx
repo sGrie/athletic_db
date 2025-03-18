@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import NewsCard from '@/components/NewsCard';
 import { Button } from '@/components/ui/Button';
 
@@ -26,7 +28,9 @@ async function NewsSection() {
       </div>
 
       <div className='w-full flex justify-center'>
-        <Button variant='default'>View more articles</Button>
+        <Button variant='default' asChild>
+          <Link href='/news'>View more articles</Link>
+        </Button>
       </div>
     </div>
   );

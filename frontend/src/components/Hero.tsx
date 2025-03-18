@@ -12,10 +12,10 @@ function Hero() {
 
         <div className='flex gap-2 flex-wrap justify-center'>
           <Button asChild>
-            <Link href='/events'>Explore events</Link>
+            <Link href='/competitions'>Explore competitions</Link>
           </Button>
           <Button variant='outline' asChild>
-            <Link href='/athletes'>View athletes</Link>
+            <Link href='/schools'>View schools</Link>
           </Button>
         </div>
       </div>

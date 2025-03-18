@@ -21,10 +21,12 @@ function Header() {
         <Button variant='link' asChild>
           <Link href='/admin'>Admin</Link>
         </Button>
-        <Button variant='outline' disabled>
-          Register
+        <Button variant='outline' asChild>
+          <Link href='/register'>Register</Link>
         </Button>
-        <Button disabled>Login</Button>
+        <Button asChild>
+          <Link href='/login'>Login</Link>
+        </Button>
       </div>
       <div className='flex sm:hidden gap-1'>
         <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
@@ -35,10 +37,12 @@ function Header() {
           </PopoverTrigger>
           <PopoverContent>
             <div className='flex w-full gap-2 mb-4'>
-              <Button variant='secondary' className='flex-grow'>
-                Register
+              <Button variant='secondary' className='flex-grow' asChild>
+                <Link href='/register'>Register</Link>
               </Button>
-              <Button className='flex-grow'>Login</Button>
+              <Button className='flex-grow' asChild>
+                <Link href='/login'>Login</Link>
+              </Button>
             </div>
             <div>
               <Button
