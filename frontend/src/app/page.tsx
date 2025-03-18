@@ -5,7 +5,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <div className='max-w-[1400px] m-auto w-full flex-grow p-2 pt-4 pb-4 flex flex-col gap-4'>
+      <div className='max-w-[1400px] m-auto w-full flex-grow p-4 pt-8 pb-8 flex flex-col gap-4'>
         <div>
           <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
             Upcoming Events
