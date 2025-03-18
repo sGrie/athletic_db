@@ -29,3 +29,9 @@ export interface Result extends DatabaseEntity {
 export interface Event extends DatabaseEntity, PageWithSlug {
   results: Result[];
 }
+
+export interface NewsArticle extends DatabaseEntity {
+  title: string;
+  description: string;
+  image: string;
+}

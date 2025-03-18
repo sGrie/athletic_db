@@ -4,7 +4,7 @@ function Hero() {
   return (
     <div className='h-80 flex justify-center items-center relative bg-black text-center'>
       <div className='absolute z-10 flex flex-col items-center gap-4 p-4'>
-        <p className='font-bold text-white text-xl sm:text-2xl'>
+        <p className='font-bold text-white text-xl sm:text-2xl drop-shadow-md'>
           Athletic events, scores, athletes and schools.
         </p>
 

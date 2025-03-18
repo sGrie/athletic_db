@@ -3,12 +3,20 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 
-function NewsCard({ title, description }: { title: string; description: string }) {
+function NewsCard({
+  title,
+  description,
+  image
+}: {
+  title: string;
+  description: string;
+  image: string;
+}) {
   return (
     <Card className='w-full basis-[320px]'>
       <div className='aspect-w-4 aspect-h-5 relative'>
         <Image
-          src='https://picsum.photos/400/200'
+          src={image}
           alt='News Article'
           width={400}
           height={200}
