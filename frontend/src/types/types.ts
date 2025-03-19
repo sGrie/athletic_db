@@ -19,6 +19,21 @@ export interface Athlete extends DatabaseEntity {
   banner?: string;
 }
 
+export interface School extends DatabaseEntity, PageWithSlug {
+  name: string;
+  about: string;
+
+  profilePicture?: string;
+  banner?: string;
+}
+
+export interface Team extends DatabaseEntity, PageWithSlug {
+  name: string;
+  about: string;
+
+  profilePicture?: string;
+}
+
 export interface Competition extends DatabaseEntity, PageWithSlug {
   name: string;
   location: string;

@@ -1,5 +1,9 @@
+import Link from 'next/link';
+
 import Hero from '@/components/Hero';
+import AthletesSection from '@/components/section/AthletesSection';
 import NewsSection from '@/components/section/NewsSection';
+import { Button } from '@/components/ui/Button';
 
 function Home() {
   return (
@@ -10,17 +14,23 @@ function Home() {
           <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
             Upcoming Competitions
           </h2>
+          <div className='flex flex-col items-center justify-center gap-4'>
+            <Button asChild>
+              <Link href='/competitions'>View all</Link>
+            </Button>
+          </div>
         </div>
         <div>
           <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
             Top Schools
           </h2>
+          <div className='flex flex-col items-center justify-center gap-4'>
+            <Button asChild>
+              <Link href='/schools'>View all</Link>
+            </Button>
+          </div>
         </div>
-        <div>
-          <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-            Top Athletes
-          </h2>
-        </div>
+        <AthletesSection />
         <NewsSection />
       </div>
     </>

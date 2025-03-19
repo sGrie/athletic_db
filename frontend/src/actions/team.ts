@@ -1,18 +1,19 @@
 'use server';
 
-import { Athlete } from '@/types/types';
+import { Athlete, Team } from '@/types/types';
 
 export async function createTeam() {
   // TODO: Create in database.
 }
 
-export async function getTeam(id: string): Promise<Athlete | null> {
+export async function getTeam(id: string): Promise<Team | null> {
   // TODO: Call from database.
 
   return Promise.resolve({
     id,
     name: 'Team Name',
-    about: 'Test description.'
+    about: 'Test description.',
+    slug: 'team-1'
   });
 }
 
