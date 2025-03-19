@@ -8,7 +8,7 @@ interface PageWithSlug {
   slug: string;
 }
 
-export interface Entity extends DatabaseEntity {
+export interface Athlete extends DatabaseEntity {
   name: string;
   about: string;
 

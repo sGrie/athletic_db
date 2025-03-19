@@ -1,12 +1,12 @@
 'use server';
 
-import { Entity } from '@/types/types';
+import { Athlete } from '@/types/types';
 
 export async function createTeam() {
   // TODO: Create in database.
 }
 
-export async function getAthlete(id: string): Promise<Entity | null> {
+export async function getAthlete(id: string): Promise<Athlete | null> {
   // TODO: Call from database.
 
   return Promise.resolve({
@@ -17,7 +17,7 @@ export async function getAthlete(id: string): Promise<Entity | null> {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getAthletesBySchool(schoolId: string): Promise<Entity[]> {
+export async function getAthletesBySchool(schoolId: string): Promise<Athlete[]> {
   return Promise.resolve([]);
 }
 

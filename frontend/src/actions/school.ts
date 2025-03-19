@@ -1,12 +1,12 @@
 'use server';
 
-import { Entity } from '@/types/types';
+import { Athlete } from '@/types/types';
 
 export async function createSchool() {
   // TODO: Create in database.
 }
 
-export async function getSchool(id: string): Promise<Entity | null> {
+export async function getSchool(id: string): Promise<Athlete | null> {
   // TODO: Call from database.
 
   return Promise.resolve({
@@ -16,7 +16,7 @@ export async function getSchool(id: string): Promise<Entity | null> {
   });
 }
 
-export async function getSchools(): Promise<Entity[]> {
+export async function getSchools(): Promise<Athlete[]> {
   return Promise.resolve([]);
 }
 
