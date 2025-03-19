@@ -2,18 +2,27 @@
 
 import { Athlete } from '@/types/types';
 
+const TEST_ATHLETES: Athlete[] = [
+  { id: '1', name: 'John Doe', about: 'Test description.', country: 'us' },
+  { id: '2', name: 'Jane Smith', about: 'Test description.', country: 'ca' }
+];
+
 export async function createTeam() {
   // TODO: Create in database.
+}
+
+export async function getAthletes(): Promise<Athlete[]> {
+  return Promise.resolve(TEST_ATHLETES);
 }
 
 export async function getAthlete(id: string): Promise<Athlete | null> {
   // TODO: Call from database.
 
-  return Promise.resolve({
-    id,
-    name: 'John Doe',
-    about: 'Test description.'
-  });
+  return (
+    TEST_ATHLETES.find((athlete) => {
+      return athlete.id === id;
+    }) || null
+  );
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

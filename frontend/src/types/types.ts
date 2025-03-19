@@ -1,5 +1,7 @@
 // TODO: Update from database schema.
 
+import { CountryCode } from '@/data/countries';
+
 interface DatabaseEntity {
   id: string;
 }
@@ -11,6 +13,7 @@ interface PageWithSlug {
 export interface Athlete extends DatabaseEntity {
   name: string;
   about: string;
+  country: CountryCode;
 
   profilePicture?: string;
   banner?: string;
