@@ -9,7 +9,7 @@ function ProfileFlag({ country }: { country: CountryCode }) {
       alt={country.toString()}
       width={32}
       height={16}
-      className='object-contain'
+      className='object-contain w-6 h-6 sm:w-8 sm:h-8'
     />
   );
 }
