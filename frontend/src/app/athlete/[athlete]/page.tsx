@@ -21,7 +21,7 @@ async function AthletePage({ params }: { params: Promise<{ athlete: string }> })
         alt='User Banner'
         width={2000}
         height={500}
-        className='object-cover min-h-[150px] max-h-[250px]'
+        className='object-cover min-h-[150px] max-h-[250px] w-full'
       />
       <div className='p-2 flex flex-col gap-8 max-w-[1000px] m-auto'>
         <ProfileHeader athlete={athlete} />
@@ -33,6 +33,9 @@ async function AthletePage({ params }: { params: Promise<{ athlete: string }> })
         </div>
         <div>
           <H2>Results</H2>
+        </div>
+        <div>
+          <H2>Teams</H2>
         </div>
       </div>
     </div>
