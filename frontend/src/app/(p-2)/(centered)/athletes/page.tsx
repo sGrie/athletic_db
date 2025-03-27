@@ -1,4 +1,4 @@
-import AthletesTable from '@/components/AthletesTable';
+import TableAthletes from '@/components/table/TableAthletes';
 import H2 from '@/components/ui/H2';
 
 import { getAthletes } from '@/actions/athlete';
@@ -9,7 +9,7 @@ async function AthletesPage() {
   return (
     <>
       <H2>Athletes</H2>
-      <AthletesTable athletes={athletes} />
+      <TableAthletes athletes={athletes} />
     </>
   );
 }

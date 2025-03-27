@@ -11,7 +11,7 @@ import {
 
 import { Athlete } from '@/types/types';
 
-function AthletesTable({ athletes }: { athletes: Athlete[] }) {
+function TableAthletes({ athletes }: { athletes: Athlete[] }) {
   return (
     <Table>
       <TableHeader>
@@ -38,4 +38,4 @@ function AthletesTable({ athletes }: { athletes: Athlete[] }) {
   );
 }
 
-export default AthletesTable;
+export default TableAthletes;

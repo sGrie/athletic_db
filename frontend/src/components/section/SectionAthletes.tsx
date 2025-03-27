@@ -5,7 +5,7 @@ import H2 from '@/components/ui/H2';
 
 import { getAthletes } from '@/actions/athlete';
 
-import AthletesTable from '../AthletesTable';
+import TableAthletes from '../table/TableAthletes';
 
 async function SectionAthletes() {
   let athletes = await getAthletes();
@@ -15,7 +15,7 @@ async function SectionAthletes() {
     <div>
       <H2>Top Athletes</H2>
       <div className='flex flex-col items-center justify-center gap-4'>
-        <AthletesTable athletes={athletes} />
+        <TableAthletes athletes={athletes} />
 
         <Button asChild>
           <Link href='/athletes'>View all</Link>
