@@ -6,7 +6,7 @@ import H2 from '@/components/ui/H2';
 
 import { getNews } from '@/actions/news';
 
-async function NewsSection() {
+async function SectionNews() {
   const news = await getNews(4);
 
   return (
@@ -35,4 +35,4 @@ async function NewsSection() {
   );
 }
 
-export default NewsSection;
+export default SectionNews;

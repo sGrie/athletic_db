@@ -7,7 +7,7 @@ import { getAthletes } from '@/actions/athlete';
 
 import AthletesTable from '../AthletesTable';
 
-async function AthletesSection() {
+async function SectionAthletes() {
   let athletes = await getAthletes();
   athletes = athletes.slice(0, 5);
 
@@ -25,4 +25,4 @@ async function AthletesSection() {
   );
 }
 
-export default AthletesSection;
+export default SectionAthletes;
