@@ -4,6 +4,7 @@ import { TriangleAlert, UserRoundPlus } from 'lucide-react';
 import NotFound from '@/components/NotFound';
 import ProfileCountry from '@/components/ProfileCountry';
 import { Button } from '@/components/ui/Button';
+import H2 from '@/components/ui/H2';
 
 import { getAthlete } from '@/actions/athlete';
 
@@ -55,14 +56,10 @@ async function AthletePage({ params }: { params: Promise<{ athlete: string }> })
           <p>{athlete.about}</p>
         </div>
         <div>
-          <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-            Records
-          </h2>
+          <H2>Records</H2>
         </div>
         <div>
-          <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-            Results
-          </h2>
+          <H2>Results</H2>
         </div>
       </div>
     </div>

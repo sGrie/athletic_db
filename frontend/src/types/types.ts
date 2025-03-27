@@ -14,6 +14,7 @@ export interface Athlete extends DatabaseEntity {
   name: string;
   about: string;
   country: CountryCode;
+  school: School;
 
   profilePicture?: string;
   banner?: string;

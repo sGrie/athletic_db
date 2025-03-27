@@ -1,8 +1,11 @@
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/Button';
+import H2 from '@/components/ui/H2';
 
 import { getAthletes } from '@/actions/athlete';
+
+import AthletesTable from '../AthletesTable';
 
 async function AthletesSection() {
   let athletes = await getAthletes();
@@ -10,11 +13,10 @@ async function AthletesSection() {
 
   return (
     <div>
-      <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-        Top Athletes
-      </h2>
+      <H2>Top Athletes</H2>
       <div className='flex flex-col items-center justify-center gap-4'>
-        <p>{JSON.stringify(athletes)}</p>
+        <AthletesTable athletes={athletes} />
+
         <Button asChild>
           <Link href='/athletes'>View all</Link>
         </Button>

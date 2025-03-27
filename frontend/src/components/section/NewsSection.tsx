@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import NewsCard from '@/components/NewsCard';
 import { Button } from '@/components/ui/Button';
+import H2 from '@/components/ui/H2';
 
 import { getNews } from '@/actions/news';
 
@@ -10,9 +11,7 @@ async function NewsSection() {
 
   return (
     <div className='flex flex-col gap-4'>
-      <h2 className='border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>
-        Latest News
-      </h2>
+      <H2>Latest News</H2>
 
       <div className='flex gap-4 w-full justify-evenly flex-wrap'>
         {news.map((newsItem, i) => {

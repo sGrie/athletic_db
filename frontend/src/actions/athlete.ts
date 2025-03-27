@@ -3,8 +3,30 @@
 import { Athlete } from '@/types/types';
 
 const TEST_ATHLETES: Athlete[] = [
-  { id: '1', name: 'John Doe', about: 'Test description.', country: 'us' },
-  { id: '2', name: 'Jane Smith', about: 'Test description.', country: 'ca' }
+  {
+    id: '1',
+    name: 'John Doe',
+    about: 'Test description.',
+    country: 'us',
+    school: {
+      id: '1',
+      name: 'Test School',
+      about: 'Test description.',
+      slug: 'test-school'
+    }
+  },
+  {
+    id: '2',
+    name: 'Jane Smith',
+    about: 'Test description.',
+    country: 'ca',
+    school: {
+      id: '1',
+      name: 'Test School',
+      about: 'Test description.',
+      slug: 'test-school'
+    }
+  }
 ];
 
 export async function createTeam() {
