@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Pencil, Plus, Trash } from 'lucide-react';
 
-import AthletesTable from '@/components/AthletesTable';
 import DialogAthlete from '@/components/dialog/DialogAthlete';
 import { Button } from '@/components/ui/Button';
 import {
