@@ -20,7 +20,7 @@ function NewsCard({
           alt='News Article'
           width={400}
           height={200}
-          className='object-fill w-full'
+          className='object-fill w-full rounded-t-xl'
         />
       </div>
       <CardHeader className='grid gap-1 p-4'>
