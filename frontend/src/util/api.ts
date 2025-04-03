@@ -1,4 +1,7 @@
+/* eslint-disable no-console */
+
 import axios from 'axios';
+import chalk from 'chalk';
 
 import { APIResponse } from '@/types/types';
 
@@ -12,11 +15,27 @@ export async function adbGet<T>(endpoint: string): Promise<APIResponse<T>> {
     endpoint = `/${endpoint}`;
   }
 
-  const request = await axios.get(`${process.env.BACKEND_URL}${endpoint}`);
-  const data = await request.data;
+  try {
+    const request = await axios.get(`${process.env.BACKEND_URL}${endpoint}`, {
+      validateStatus: () => {
+        return true;
+      }
+    });
+    const data = await request.data;
 
-  return {
-    code: request.status,
-    data
-  };
+    return {
+      code: request.status,
+      data
+    };
+  } catch (error: any) {
+    console.error(error);
+    console.log();
+    console.log(chalk.bold.red('Error when fetching from API. Is the backend running?'));
+    console.log();
+
+    return {
+      code: 500,
+      data: null as T
+    };
+  }
 }

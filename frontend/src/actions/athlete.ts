@@ -1,47 +1,33 @@
 'use server';
 
-import { Athlete } from '@/types/types';
+import { adbGet } from '@/util/api';
 
-const TEST_ATHLETES: Athlete[] = [
-  {
-    id: '1',
-    name: 'John Doe',
-    about: 'Test description.',
-    country: 'us',
-    school: {
-      id: '1',
-      name: 'Test School',
-      about: 'Test description.',
-      slug: 'test-school'
-    }
-  },
-  {
-    id: '2',
-    name: 'Jane Smith',
-    about: 'Test description.',
-    country: 'ca',
-    school: {
-      id: '1',
-      name: 'Test School',
-      about: 'Test description.',
-      slug: 'test-school'
-    }
-  }
-];
+import { Athlete } from '@/types/types';
 
 export async function createTeam() {
   // TODO: Create in database.
 }
 
 export async function getAthletes(): Promise<Athlete[]> {
-  return Promise.resolve(TEST_ATHLETES);
+  const response = await adbGet<{
+    athletes: Athlete[];
+  }>('/athletes');
+
+  if (response.code !== 200) {
+    return [];
+  }
+
+  const { athletes } = response.data;
+
+  return athletes;
 }
 
 export async function getAthlete(id: string): Promise<Athlete | null> {
   // TODO: Call from database.
+  const athletes = await getAthletes();
 
   return (
-    TEST_ATHLETES.find((athlete) => {
+    athletes.find((athlete) => {
       return athlete.id === id;
     }) || null
   );

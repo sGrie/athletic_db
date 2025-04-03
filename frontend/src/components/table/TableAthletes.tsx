@@ -12,7 +12,7 @@ import {
 import { Athlete } from '@/types/types';
 
 function TableAthletes({ athletes }: { athletes: Athlete[] }) {
-  return (
+  return athletes.length > 0 ? (
     <Table>
       <TableHeader>
         <TableRow>
@@ -35,6 +35,8 @@ function TableAthletes({ athletes }: { athletes: Athlete[] }) {
         })}
       </TableBody>
     </Table>
+  ) : (
+    <p className='pt-4'>No athletes found.</p>
   );
 }
 
