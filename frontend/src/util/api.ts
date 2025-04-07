@@ -11,6 +11,18 @@ import { APIResponse } from '@/types/types';
  * @returns The returned JSON data.
  */
 export async function adbGet<T>(endpoint: string): Promise<APIResponse<T>> {
+  if (!process.env.BACKEND_URL) {
+    console.error(
+      chalk.bold.red(
+        'No backend URL set. Please set the BACKEND_URL environment variable. Refer to /frontend/README.md for details.'
+      )
+    );
+    return {
+      code: 500,
+      data: null as T
+    };
+  }
+
   if (!endpoint.startsWith('/')) {
     endpoint = `/${endpoint}`;
   }
