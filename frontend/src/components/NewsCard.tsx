@@ -25,7 +25,7 @@ function NewsCard({
       </div>
       <CardHeader className='grid gap-1 p-4'>
         <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className='line-clamp-3'>{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <Button>Read</Button>
