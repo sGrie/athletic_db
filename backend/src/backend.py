@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import psycopg2
 
 from news import get_news
@@ -33,8 +33,10 @@ def hello_world():
 
 @app.route("/news")
 def news():
+    limit = int(request.args.get('limit'))
+
     articles = get_news()
 
     return jsonify(
-        articles=articles
+        articles=articles[slice(limit)]
     )
