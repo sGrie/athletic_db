@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
 import json
 
+from news import get_news
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -21,4 +23,12 @@ def athletes():
 
     return jsonify(
         athletes=athletes
+    )
+
+@app.route("/news")
+def news():
+    articles = get_news()
+
+    return jsonify(
+        articles=articles
     )

@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify
 import psycopg2
 
+from news import get_news
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -27,4 +29,12 @@ def hello_world():
     return jsonify(
         status=200,
         message="Backend works."
+    )
+
+@app.route("/athletes")
+def news():
+    articles = get_news()
+
+    return jsonify(
+        articles=articles
     )
