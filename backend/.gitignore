@@ -1,6 +1,6 @@
 # Folders
-__pycache__/
-.vnev/
+/src/__pycache__
+.venv/
 
 # Files
 .env

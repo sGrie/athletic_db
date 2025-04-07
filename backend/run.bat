@@ -1,1 +1,1 @@
-flask --app backend run -p 8001
+flask --app src/backend run -p 8001
