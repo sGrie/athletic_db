@@ -11,5 +11,8 @@
     "frontend/NEXT.md": true,
     "frontend/postcss.config.mjs": true,
     "frontend/tsconfig.json": true,
+    "backedn/__pycache__": true,
+    "backedn/.venv": true,
+    "backedn/.cspell.json": true,
   }
 }
