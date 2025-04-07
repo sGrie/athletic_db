@@ -14,16 +14,20 @@ async function SectionNews() {
       <H2>Latest News</H2>
 
       <div className='flex gap-4 w-full justify-evenly flex-wrap'>
-        {news.map((newsItem, i) => {
-          return (
-            <NewsCard
-              title={newsItem.title}
-              description={newsItem.description}
-              image={`${newsItem.image}?i=${i}`}
-              key={i}
-            />
-          );
-        })}
+        {news.length > 0 ? (
+          news.map((newsItem, i) => {
+            return (
+              <NewsCard
+                title={newsItem.title}
+                description={newsItem.description}
+                image={`${newsItem.image}?i=${i}`}
+                key={i}
+              />
+            );
+          })
+        ) : (
+          <p>No news found.</p>
+        )}
       </div>
 
       <div className='w-full flex justify-center'>

@@ -31,7 +31,7 @@ def hello_world():
         message="Backend works."
     )
 
-@app.route("/athletes")
+@app.route("/news")
 def news():
     articles = get_news()
 

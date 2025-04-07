@@ -33,6 +33,7 @@ export async function adbGet<T>(endpoint: string): Promise<APIResponse<T>> {
         return true;
       }
     });
+
     const data = await request.data;
 
     return {
