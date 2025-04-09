@@ -1,0 +1,98 @@
+display all schools in alphabetic order
+
+SELECT school_name, mascot FROM public.schools
+ORDER BY school_name ASC 
+
+
+
+
+display all teams in alphabetic order
+
+SELECT team_name, sport FROM public.teams
+ORDER BY team_name ASC 
+
+
+
+
+
+display all teams from a specific school 
+
+SELECT team_name, sport
+FROM public.teams
+WHERE school_id=1 --whatever school you want
+ORDER BY team_name ASC 
+
+
+
+
+
+display all athletes and sport they play
+
+SELECT athletes.first_name, athletes.last_name, teams.sport 
+FROM public.athletes
+INNER JOIN public.teams ON athletes.team_id=teams.team_id
+
+
+
+
+
+display all athletes from a given team
+
+SELECT athletes.first_name, athletes.last_name, teams.sport 
+FROM public.athletes INNER JOIN public.teams 
+	ON athletes.team_id=teams.team_id
+WHERE athletes.team_id=111    --whatever team_id you want
+
+
+
+
+
+display all athletes from a given school
+
+SELECT athletes.first_name, athletes.last_name, teams.sport 
+FROM public.athletes INNER JOIN public.teams
+	ON athletes.team_id=teams.team_id
+WHERE teams.school_id=1    --whatever school_id you want
+
+
+
+
+display all meets
+
+SELECT comp_name, event_location, date
+FROM public.competitions
+
+
+
+
+
+display all athletes in a given event
+
+SELECT event_submissions.athlete_id, athletes.first_name, athletes.last_name
+FROM public.event_submissions
+INNER JOIN public.athletes ON athletes.athlete_id=event_submissions.athlete_id
+WHERE event_submissions.event_id=5      --insert the event you want here
+
+
+
+
+
+display all results in a given event at a meet
+
+SELECT athletes.first_name, athletes.last_name, event_submissions.results
+FROM public.event_submissions INNER JOIN public.athletes
+	ON event_submissions.athlete_id=athletes.athlete_id
+WHERE event_submissions.event_id=5  --whatever event_id you choose
+
+
+
+
+
+display all events at a given meet
+
+SELECT events.event_name
+FROM public.events
+WHERE comp_id=5  --put in whatever comp_id for the specific meet
+ORDER BY events.event_name
+
+
