@@ -1,0 +1,31 @@
+INSERT INTO School(id, name, mascot)
+VALUES (1,	"Oakland University",	"Grizzlies"),
+(2	"Youngstown State"	"Penguins");
+
+
+INSERT INTO Team(id, name, sport, conference, head_coach, school_id)
+VALUES (111,	"Oakland t&f",	"Track",	"Horizon League",	"Paul Rice",	1),
+(112,	"Oakland s&d",	"Swim and Dive",	"Horizon League",	"Mitch Alters",	1),
+(113,	"Oakland Golf",	"Golf",	"Horizon League",	"Nick Pumford",	1),
+(121,	"Youngstown t&f",	"Track",	"Horizon League",	"Brian Gorby",	2),
+(122,	"Youngstown s&d",	"Swim and Dive",	"Horizon League",	"Brad Smith",	2);
+
+INSERT INTO Athlete(id, first_name, last_name, age, main_event, team_id, country_code)
+VALUES (1000,	"Simon",	"Griemert",	20,	"Pole Vault",	111, "US"),
+(1001,	"Mia",	"Englander",	23,	"200m",	112, "US");
+
+INSERT INTO Competition(id, event_location, name, date)
+VALUES (11, "Oakland University", "Elaine Leigh", "2025-04-22"),
+(12, "Youngstown", "Horizon Champs", "2025-05-09"),
+(21, "Purdue Fort Wayne", "Horizon Swim", "2025-02-21");
+
+INSERT INTO Event(id, name, comp_id)
+VALUES (1001, "Pole Vault", 11),
+(1002, "Pole Vault", 12),
+(1003, "100m Dash", 12),
+(1004, "100yd Free", 13);
+
+INSERT INTO Event_Submission(id, athlete_id, eventId, result)
+VALUES (888, 1000, 1002, "5.00m"),
+(889, 1000, 1001, "4.52m"),
+(898, 1001, 1004, "39.83s");
