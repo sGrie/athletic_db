@@ -4,6 +4,7 @@ from flask import Flask, jsonify, request
 import psycopg2
 
 from news import get_news
+from setup import setup
 
 load_dotenv()
 
@@ -23,14 +24,69 @@ conn = psycopg2.connect(
 )
 cursor = conn.cursor()
 
-@app.route("/")
-def hello_world():
+@app.route("/", methods=["GET"])
+def root():
     return jsonify(
         status=200,
         message="Backend works."
     )
 
-@app.route("/news")
+# /athlete
+@app.route("/athletes", methods=["GET"])
+def get_athletes():
+    return jsonify()
+
+# /athlete?id=0
+@app.route("/athlete", methods=["GET"])
+def get_athlete():
+    athleteId = request.args.get('id')
+
+    return jsonify()
+
+# /competition
+@app.route("/competitions", methods=["GET"])
+def get_competitions():
+    return jsonify()
+
+# /competition?id=0
+@app.route("/competition", methods=["GET"])
+def get_competition():
+    competitionId = request.args.get('id')
+
+    return jsonify()
+
+# /school
+@app.route("/schools", methods=["GET"])
+def get_schools():
+    return jsonify()
+
+# /school?id=0
+@app.route("/school", methods=["GET"])
+def get_school():
+    schoolId = request.args.get('id')
+
+    return jsonify()
+
+# /team
+@app.route("/teams", methods=["GET"])
+def get_teams():
+    return jsonify()
+
+# /team?id=0
+@app.route("/team", methods=["GET"])
+def get_team():
+    teamId = request.args.get('id')
+
+    return jsonify()
+
+# /result?event=0
+@app.route("/results", methods=["GET"])
+def get_results():
+    event = request.args.get('event')
+
+    return jsonify()
+
+@app.route("/news", methods=["GET"])
 def news():
     limit = int(request.args.get('limit'))
 
