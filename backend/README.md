@@ -18,6 +18,7 @@ Create a `.env` file with the following fields.
 DB_NAME=""
 DB_USERNAME=""
 DB_PASSWORD=""
+DB_HOST=""
 ```
 
 Update DB information accordingly.

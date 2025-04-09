@@ -12,17 +12,16 @@ app = Flask(__name__)
 DB_NAME = os.getenv('DB_NAME')
 DB_USERNAME = os.getenv('DB_USERNAME')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_HOST = os.getenv('DB_HOST')
 
-# TODO: Set up database connection.
-# conn = psycopg2.connect(
-#     dbname="shop",
-#     user="…",
-#     password="…",
-#     host="localhost",
-#     port="5432"
-# )
-# cursor = conn.cursor()
-
+conn = psycopg2.connect(
+    dbname=DB_NAME,
+    user=DB_USERNAME,
+    password=DB_PASSWORD,
+    host=DB_HOST,
+    port="5432"
+)
+cursor = conn.cursor()
 
 @app.route("/")
 def hello_world():
