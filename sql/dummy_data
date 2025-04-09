@@ -23,7 +23,7 @@ INSERT INTO Event(id, name, comp_id)
 VALUES (1001, 'Pole Vault', 11),
 (1002, 'Pole Vault', 12),
 (1003, '100m Dash', 12),
-(1004, '100yd Free', 13);
+(1004, '100yd Free', 21);
 
 INSERT INTO Event_Submission(id, athlete_id, eventId, result)
 VALUES (888, 1000, 1002, '5.00m'),
