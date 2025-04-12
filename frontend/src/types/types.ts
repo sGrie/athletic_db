@@ -31,18 +31,22 @@ export interface Team extends DatabaseEntity {
   profilePicture?: string;
 }
 
-export interface Competition extends DatabaseEntity {
-  name: string;
-  location: string;
-}
-
 export interface Result extends DatabaseEntity {
   athleteId: string;
-  time: number;
+  eventId: string;
+  result: string;
 }
 
 export interface Event extends DatabaseEntity {
+  name: string;
   results: Result[];
+}
+
+export interface Competition extends DatabaseEntity {
+  name: string;
+  location: string;
+  date: string;
+  events: Event[];
 }
 
 export interface NewsArticle extends DatabaseEntity {
