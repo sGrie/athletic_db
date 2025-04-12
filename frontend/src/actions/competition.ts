@@ -10,9 +10,7 @@ export async function getCompetition(id: string): Promise<Competition | null> {
   return Promise.resolve({
     id,
     name: 'Competition Name',
-    location: 'Location',
-
-    slug: 'competition'
+    location: 'Location'
   });
 }
 export async function getCompetitions(): Promise<Competition[]> {

@@ -24,7 +24,7 @@ function SchoolCard({ school }: { school: School }) {
       </CardHeader>
       <CardContent>
         <Button asChild>
-          <Link href={`/school/${school.slug}`}>View</Link>
+          <Link href={`/school/${school.id}`}>View</Link>
         </Button>
       </CardContent>
     </Card>

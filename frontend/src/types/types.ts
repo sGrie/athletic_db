@@ -6,10 +6,6 @@ interface DatabaseEntity {
   id: string;
 }
 
-interface PageWithSlug {
-  slug: string;
-}
-
 export interface Athlete extends DatabaseEntity {
   name: string;
   about: string;
@@ -20,7 +16,7 @@ export interface Athlete extends DatabaseEntity {
   banner?: string;
 }
 
-export interface School extends DatabaseEntity, PageWithSlug {
+export interface School extends DatabaseEntity {
   name: string;
   about: string;
 
@@ -28,14 +24,14 @@ export interface School extends DatabaseEntity, PageWithSlug {
   banner?: string;
 }
 
-export interface Team extends DatabaseEntity, PageWithSlug {
+export interface Team extends DatabaseEntity {
   name: string;
   about: string;
 
   profilePicture?: string;
 }
 
-export interface Competition extends DatabaseEntity, PageWithSlug {
+export interface Competition extends DatabaseEntity {
   name: string;
   location: string;
 }
@@ -45,7 +41,7 @@ export interface Result extends DatabaseEntity {
   time: number;
 }
 
-export interface Event extends DatabaseEntity, PageWithSlug {
+export interface Event extends DatabaseEntity {
   results: Result[];
 }
 

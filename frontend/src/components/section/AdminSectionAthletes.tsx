@@ -41,7 +41,7 @@ async function AdminSectionAthletes() {
                   <Link href={`/athlete/${athlete.id}`}>{athlete.name}</Link>
                 </TableCell>
                 <TableCell>
-                  <Link href={`/school/${athlete.school.slug}`}>{athlete.school.name}</Link>
+                  <Link href={`/school/${athlete.school.id}`}>{athlete.school.name}</Link>
                 </TableCell>
                 <TableCell className='flex justify-end gap-2'>
                   <Button size='icon-sm' variant='ghost'>

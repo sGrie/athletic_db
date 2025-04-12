@@ -6,12 +6,12 @@ import H2 from '@/components/ui/H2';
 import H3 from '@/components/ui/H3';
 import Paper from '@/components/ui/Paper';
 
-import { getSchoolBySlug } from '@/actions/school';
+import { getSchool } from '@/actions/school';
 
 async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
   const schoolId = (await params).school;
 
-  const school = await getSchoolBySlug(schoolId);
+  const school = await getSchool(schoolId);
   if (!school) {
     return <NotFound />;
   }

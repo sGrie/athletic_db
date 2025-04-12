@@ -14,9 +14,7 @@ export async function getEvent(competitionId: string, eventId: string): Promise<
     athleteId: '123',
     time: 123.56,
 
-    results: [],
-
-    slug: 'event'
+    results: []
   });
 }
 

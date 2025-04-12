@@ -28,7 +28,7 @@ function TableAthletes({ athletes }: { athletes: Athlete[] }) {
                 <Link href={`/athlete/${athlete.id}`}>{athlete.name}</Link>
               </TableCell>
               <TableCell>
-                <Link href={`/school/${athlete.school.slug}`}>{athlete.school.name}</Link>
+                <Link href={`/school/${athlete.school.id}`}>{athlete.school.name}</Link>
               </TableCell>
             </TableRow>
           );

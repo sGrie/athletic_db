@@ -24,7 +24,7 @@ function TableSchools({ schools }: { schools: School[] }) {
           return (
             <TableRow key={school.id}>
               <TableCell>
-                <Link href={`/school/${school.slug}`}>{school.name}</Link>
+                <Link href={`/school/${school.id}`}>{school.name}</Link>
               </TableCell>
             </TableRow>
           );

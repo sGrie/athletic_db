@@ -12,8 +12,7 @@ export async function getTeam(id: string): Promise<Team | null> {
   return Promise.resolve({
     id,
     name: 'Team Name',
-    about: 'Test description.',
-    slug: 'team-1'
+    about: 'Test description.'
   });
 }
 

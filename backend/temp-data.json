@@ -8,8 +8,7 @@
       "school": {
         "id": "1",
         "name": "Test School",
-        "about": "Test description.",
-        "slug": "test-school"
+        "about": "Test description."
       }
     },
     {
@@ -20,8 +19,7 @@
       "school": {
         "id": "1",
         "name": "Test School",
-        "about": "Test description.",
-        "slug": "test-school"
+        "about": "Test description."
       }
     }
   ]
