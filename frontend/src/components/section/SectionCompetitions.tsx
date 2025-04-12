@@ -9,6 +9,7 @@ import CompetitionBox from '../CompetitionBox';
 
 async function SectionCompetitions() {
   const competitions = await getCompetitions();
+  competitions.splice(3);
 
   return (
     <div>
