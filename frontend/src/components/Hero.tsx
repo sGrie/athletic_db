@@ -1,6 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/Button';
+
+import trackImage from '@/images/track.jpg';
 
 function Hero() {
   return (
@@ -19,8 +22,9 @@ function Hero() {
           </Button>
         </div>
       </div>
-      {/* TODO: Change image. */}
-      <div className='w-full h-full bg-[url("https://picsum.photos/1000/800")] opacity-70 bg-cover'></div>
+      <div className='w-full h-full bg-cover bg-center opacity-60'>
+        <Image src={trackImage} alt='Track' fill className='object-cover' priority />
+      </div>
     </div>
   );
 }
