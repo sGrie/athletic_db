@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
 
@@ -13,7 +12,7 @@ function SchoolCard({ school }: { school: School }) {
   return (
     <Card>
       <div className='aspect-w-4 aspect-h-5 relative'>
-        <Image
+        <img
           src={school.profile_picture}
           alt={school.name}
           width={400}

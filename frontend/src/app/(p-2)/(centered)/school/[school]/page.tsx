@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import NotFound from '@/components/NotFound';
 import ProfileCountry from '@/components/profile/ProfileCountry';
 import H2 from '@/components/ui/H2';
@@ -22,7 +20,7 @@ async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
   return (
     <>
       <div className='flex gap-4'>
-        <Image
+        <img
           src={school.profile_picture}
           alt={school.name}
           width={500}
