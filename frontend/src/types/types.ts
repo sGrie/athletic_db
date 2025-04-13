@@ -28,12 +28,6 @@ export interface Team extends DatabaseEntity {
   school: School;
 }
 
-export interface Result extends DatabaseEntity {
-  athleteId: number;
-  eventId: number;
-  result: string;
-}
-
 export interface Event extends DatabaseEntity {
   name: string;
   comp_id: number;

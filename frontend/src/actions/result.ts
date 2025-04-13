@@ -1,31 +1,41 @@
 'use server';
 
-import { Result } from '@/types/types';
+import { adbGet } from '@/util/api';
+
+import { Event, EventSubmission } from '@/types/types';
 
 export async function createResult() {
   // TODO: Create in database.
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getResult(resultId: string): Promise<Result | null> {
+export async function getResult(resultId: string): Promise<EventSubmission | null> {
   // TODO: Create in database.
 
   return Promise.resolve({
     id: 0,
-    athleteId: 0,
-    eventId: 0,
+    athlete_id: 0,
+    event_id: 0,
     result: '102'
   });
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getResultsByAthlete(athleteId: string): Promise<Result[]> {
-  return Promise.resolve([]);
-}
+export async function getResultsByAthlete(athleteId: string): Promise<
+  (EventSubmission & {
+    event: Event;
+  })[]
+> {
+  const response = await adbGet<
+    (EventSubmission & {
+      event: Event;
+    })[]
+  >(`/athletes/${athleteId}/submissions`);
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getTopResultsByEvent(athleteId: string, count: number): Promise<Result[]> {
-  return Promise.resolve([]);
+  if (response.code !== 200) {
+    return [];
+  }
+
+  return response.data;
 }
 
 export async function deleteResult() {

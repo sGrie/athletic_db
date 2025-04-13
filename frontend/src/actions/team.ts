@@ -1,26 +1,32 @@
 'use server';
 
+import { adbGet } from '@/util/api';
+
 import { Athlete, Team } from '@/types/types';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getTeam(id: string): Promise<Team | null> {
-  return Promise.resolve({
-    id: 0,
-    name: 'Team Name',
-    head_coach: 'Head Coach',
-    conference: 'Conference',
-    sport: 'Sport',
-    school_id: 1,
+  const response = await adbGet<Team | null>(`/teams/${id}`);
 
-    school: {
-      id: 1,
-      mascot: 'Mascot',
-      name: 'School Name'
-    }
-  });
+  return response.data;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getTeamsBySchool(schoolId: string): Promise<Athlete[]> {
   return Promise.resolve([]);
+}
+
+export async function getTeamAthletes(teamId: string) {
+  const response = await adbGet<Athlete[]>(`/teams/${teamId}/athletes`);
+
+  if (response.code !== 200) {
+    return [];
+  }
+
+  return response.data;
+}
+
+export async function getTeamSchool(teamId: string) {
+  const response = await adbGet<Team | null>(`/teams/${teamId}/school`);
+
+  return response.data;
 }

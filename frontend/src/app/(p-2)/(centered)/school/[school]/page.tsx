@@ -6,7 +6,7 @@ import H2 from '@/components/ui/H2';
 import H3 from '@/components/ui/H3';
 import Paper from '@/components/ui/Paper';
 
-import { getSchool } from '@/actions/school';
+import { getSchool, getSchoolAthletes, getSchoolTeams } from '@/actions/school';
 
 async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
   const schoolId = (await params).school;
@@ -15,6 +15,9 @@ async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
   if (!school) {
     return <NotFound />;
   }
+
+  const teams = await getSchoolTeams(schoolId);
+  const athletes = await getSchoolAthletes(schoolId);
 
   return (
     <>
@@ -33,15 +36,41 @@ async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
       </div>
       <div className='flex flex-wrap mt-2'>
         <div className='basis-1/2 p-1 min-w-[300px] flex-grow'>
-          <Paper>
+          <Paper className='h-full'>
             <H3>Teams</H3>
-            <p>Testing.</p>
+            {teams.length > 0 ? (
+              <ul className='list-disc list-inside'>
+                {teams.map((team) => {
+                  return (
+                    <li key={team.id}>
+                      <a href={`/school/${schoolId}/${team.id}`}>{team.name}</a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p>No teams found.</p>
+            )}
           </Paper>
         </div>
         <div className='basis-1/2 p-1 min-w-[300px] flex-grow'>
-          <Paper>
+          <Paper className='h-full'>
             <H3>Athletes</H3>
-            <p>Testing.</p>
+            {athletes.length > 0 ? (
+              <ul className='list-disc list-inside'>
+                {athletes.map((athlete) => {
+                  return (
+                    <li key={athlete.id}>
+                      <a href={`/athlete/${athlete.id}`}>
+                        {athlete.first_name} {athlete.last_name}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p>No athletes found.</p>
+            )}
           </Paper>
         </div>
         <div className='basis-1/2 p-1 min-w-[300px] flex-grow'>

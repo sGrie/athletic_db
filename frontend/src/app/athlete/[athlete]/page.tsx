@@ -1,10 +1,20 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import NotFound from '@/components/NotFound';
 import ProfileHeader from '@/components/profile/ProfileHeader';
 import H2 from '@/components/ui/H2';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from '@/components/ui/Table';
 
 import { getAthlete } from '@/actions/athlete';
+import { getResultsByAthlete } from '@/actions/result';
 
 async function AthletePage({ params }: { params: Promise<{ athlete: string }> }) {
   const athleteId = (await params).athlete;
@@ -13,6 +23,8 @@ async function AthletePage({ params }: { params: Promise<{ athlete: string }> })
   if (!athlete) {
     return <NotFound />;
   }
+
+  const results = await getResultsByAthlete(athleteId);
 
   return (
     <div>
@@ -26,16 +38,37 @@ async function AthletePage({ params }: { params: Promise<{ athlete: string }> })
       <div className='p-2 flex flex-col gap-8 max-w-[1000px] m-auto'>
         <ProfileHeader athlete={athlete} />
         <div>
-          <p>{athlete.about}</p>
-        </div>
-        <div>
-          <H2>Records</H2>
-        </div>
-        <div>
           <H2>Results</H2>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className='w-[200px]'>Event</TableHead>
+                <TableHead>Result</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {results.map((result) => {
+                return (
+                  <TableRow key={result.id}>
+                    <TableCell>
+                      <Link href={`/competition/${result.event.comp_id}`}>{result.event.name}</Link>
+                    </TableCell>
+                    <TableCell>{result.result}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
         </div>
         <div>
           <H2>Teams</H2>
+          <ul className='list-disc list-inside'>
+            <li>
+              <Link href={`/school/${athlete.team.school_id}/${athlete.team.id}`}>
+                {athlete.team.name}
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

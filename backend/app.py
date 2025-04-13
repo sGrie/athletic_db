@@ -95,6 +95,33 @@ def get_school(school_id):
 
     return jsonify({'id': school.id, 'name': school.name, 'mascot': school.mascot})
 
+@app.route('/schools/<int:school_id>/teams', methods=['GET'])
+def get_teams_for_school(school_id):
+    teams = Team.query.filter_by(school_id=school_id).all()
+
+    return jsonify([{
+        'id': t.id,
+        'name': t.name,
+        'sport': t.sport,
+        'conference': t.conference,
+        'head_coach': t.head_coach
+    } for t in teams])
+
+@app.route('/schools/<int:school_id>/athletes', methods=['GET'])
+def get_athletes_for_school(school_id):
+    teams = Team.query.filter_by(school_id=school_id).all()
+    team_ids = [team.id for team in teams]
+    athletes = Athlete.query.filter(Athlete.team_id.in_(team_ids)).all()
+
+    return jsonify([{
+        'id': a.id,
+        'first_name': a.first_name,
+        'last_name': a.last_name,
+        'age': a.age,
+        'main_event': a.main_event
+    } for a in athletes])
+
+
 # @app.route('/schools/<int:school_id>', methods=['PUT'])
 # def update_school(school_id):
 #     data = request.json
@@ -153,6 +180,30 @@ def get_team(team_id):
         'school_id': team.school_id
     })
 
+@app.route('/teams/<int:team_id>/school', methods=['GET'])
+def get_school_for_team(team_id):
+    team = Team.query.get_or_404(team_id)
+    school = School.query.get_or_404(team.school_id)
+
+    return jsonify({
+        'id': school.id,
+        'name': school.name,
+        'mascot': school.mascot
+    })
+
+@app.route('/teams/<int:team_id>/athletes', methods=['GET'])
+def get_athletes_for_team(team_id):
+    athletes = Athlete.query.filter_by(team_id=team_id).all()
+
+    return jsonify([{
+        'id': a.id,
+        'first_name': a.first_name,
+        'last_name': a.last_name,
+        'age': a.age,
+        'main_event': a.main_event
+    } for a in athletes])
+
+
 # @app.route('/teams/<int:team_id>', methods=['PUT'])
 # def update_team(team_id):
 #     data = request.json
@@ -201,6 +252,7 @@ def get_athletes():
             'sport': t.sport,
             'conference': t.conference,
             'head_coach': t.head_coach,
+            'school_id': t.school_id,
 
             'school': next(({
                 'id': s.id,
@@ -231,6 +283,7 @@ def get_athlete(athlete_id):
             'sport': t.sport,
             'conference': t.conference,
             'head_coach': t.head_coach,
+            'school_id': t.school_id,
 
             'school': next(({
                 'id': s.id,
@@ -239,6 +292,25 @@ def get_athlete(athlete_id):
             } for s in schools if s.id == t.school_id), None)
         } for t in teams if t.id == athlete.team_id), None)
     })
+
+@app.route('/athletes/<int:athlete_id>/submissions', methods=['GET'])
+def get_submissions_for_athlete(athlete_id):
+    athlete = Athlete.query.get_or_404(athlete_id)
+    submissions = EventSubmission.query.filter_by(athlete_id=athlete.id).all()
+    events = Event.query.all()
+
+    return jsonify([{
+        'id': s.id,
+        'result': s.result,
+        'event_id': s.event_id,
+        'athlete_id': s.athlete_id,
+
+        'event': next(({
+            'id': e.id,
+            'name': e.name,
+            'comp_id': e.comp_id
+        } for e in events if e.id == s.event_id), None)
+    } for s in submissions])
 
 # @app.route('/athletes/<int:athlete_id>', methods=['PUT'])
 # def update_athlete(athlete_id):
@@ -369,6 +441,7 @@ def get_athletes_in_team(team_id):
         'first_name': a.first_name,
         'last_name': a.last_name
     } for a in athletes])
+
 
 # Endpoints for news.
 @app.route("/news", methods=["GET"])
