@@ -26,8 +26,6 @@ export async function getEventSubmissions(eventId: string): Promise<
     athlete: Athlete;
   })[]
 > {
-  console.log(eventId);
-
   const response = await adbGet<
     (EventSubmission & {
       athlete: Athlete;

@@ -23,7 +23,7 @@ async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
     <>
       <div className='flex gap-4'>
         <Image
-          src={`https://picsum.photos/500/500?random=${Math.round(Math.random() * 101)}`}
+          src={school.profile_picture}
           alt={school.name}
           width={500}
           height={500}

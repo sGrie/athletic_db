@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero';
 import SectionAthletes from '@/components/section/SectionAthletes';
 import SectionCompetitions from '@/components/section/SectionCompetitions';
-import SectionNews from '@/components/section/SectionNews';
+// import SectionNews from '@/components/section/SectionNews';
 import SectionSchools from '@/components/section/SectionSchools';
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
         <SectionCompetitions />
         <SectionSchools />
         <SectionAthletes />
-        <SectionNews />
+        {/* <SectionNews /> */}
       </div>
     </>
   );

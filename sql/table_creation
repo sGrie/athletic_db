@@ -1,7 +1,9 @@
 CREATE TABLE IF NOT EXISTS School (
 	id INT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL,
-	mascot VARCHAR(50)
+	mascot VARCHAR(50),
+	profile_picture VARCHAR(255),
+	location VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS Team (

@@ -16,6 +16,8 @@ export interface Athlete extends DatabaseEntity {
 export interface School extends DatabaseEntity {
   mascot: string;
   name: string;
+  profile_picture: string;
+  location: string;
 }
 
 export interface Team extends DatabaseEntity {

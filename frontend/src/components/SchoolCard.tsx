@@ -1,17 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 
 import { School } from '@/types/types';
+
+import TextPrefixIcon from './TextPrefixIcon';
 
 function SchoolCard({ school }: { school: School }) {
   return (
     <Card>
       <div className='aspect-w-4 aspect-h-5 relative'>
         <Image
-          src={`https://picsum.photos/400/400?random=${Math.round(Math.random() * 101)}`}
+          src={school.profile_picture}
           alt={school.name}
           width={400}
           height={400}
@@ -20,7 +23,11 @@ function SchoolCard({ school }: { school: School }) {
       </div>
       <CardHeader className='grid gap-1 p-4'>
         <CardTitle>{school.name}</CardTitle>
-        {/* <CardDescription>{description}</CardDescription> */}
+        <CardDescription>
+          <TextPrefixIcon icon={<MapPin width={16} />}>
+            <p>{school.location}</p>
+          </TextPrefixIcon>
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Button asChild>

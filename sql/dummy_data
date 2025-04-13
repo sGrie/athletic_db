@@ -1,7 +1,6 @@
-INSERT INTO School(id, name, mascot)
-VALUES (1,	'Oakland University',	'Grizzlies'),
-(2,	'Youngstown State',	'Penguins');
-
+INSERT INTO School(id, name, mascot, profile_picture, location)
+VALUES (1,	'Oakland University',	'Grizzlies', 'https://cdn.hunterparcells.com/temp/ou.png', 'Rochester Hills, MI'),
+(2,	'Youngstown State',	'Penguins', 'https://cdn.hunterparcells.com/temp/ysu.png', 'Youngstown, OH');
 
 INSERT INTO Team(id, name, sport, conference, head_coach, school_id)
 VALUES (111,	'Oakland t&f',	'Track',	'Horizon League',	'Paul Rice',	1),

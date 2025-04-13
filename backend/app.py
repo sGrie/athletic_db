@@ -87,13 +87,25 @@ db.init_app(app)
 def get_schools():
     schools = School.query.all()
 
-    return jsonify([{'id': s.id, 'name': s.name, 'mascot': s.mascot} for s in schools])
+    return jsonify([{
+        'id': s.id,
+        'name': s.name,
+        'mascot': s.mascot,
+        'profile_picture': s.profile_picture,
+        'location': s.location
+    } for s in schools])
 
 @app.route('/schools/<int:school_id>', methods=['GET'])
 def get_school(school_id):
     school = School.query.get_or_404(school_id)
 
-    return jsonify({'id': school.id, 'name': school.name, 'mascot': school.mascot})
+    return jsonify({
+        'id': school.id,
+        'name': school.name,
+        'mascot': school.mascot,
+        'profile_picture': school.profile_picture,
+        'location': school.location
+    })
 
 @app.route('/schools/<int:school_id>/teams', methods=['GET'])
 def get_teams_for_school(school_id):
