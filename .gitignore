@@ -1,5 +1,5 @@
 # Folders
-/src/__pycache__
+/backend/__pycache__
 .venv/
 
 # Files
