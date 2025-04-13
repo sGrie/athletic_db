@@ -340,7 +340,7 @@ def get_submissions_for_athlete(athlete_id):
 
 @app.route('/competitions', methods=['GET'])
 def get_competitions():
-    comps = Competition.query.all()
+    comps = Competition.query.order_by(Competition.date).all()
     events = Event.query.all()
 
     return jsonify([{
