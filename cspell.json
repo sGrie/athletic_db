@@ -2,6 +2,7 @@
   "version": "0.2",
   "ignorePaths": [],
   "words": [
+    "backref",
     "dotenv",
     "jsonify",
     "pycache",

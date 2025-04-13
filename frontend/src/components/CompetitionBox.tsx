@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { format, parse } from 'date-fns';
+import { formatDate } from 'date-fns';
 import { ChevronDown } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';
@@ -38,8 +38,8 @@ function CompetitionBox({ competition }: { competition: Competition }) {
         </Collapsible>
       </div>
       <div className='flex-grow basis-1/2 min-w-[250px] flex flex-col gap-4'>
-        <p>{format(parse(competition.date, 'yyyy-MM-dd', new Date()), 'MMM dd')}</p>
-        <p>{competition.location}</p>
+        <p>{formatDate(competition.date, 'MMM dd')}</p>
+        <p>{competition.event_location}</p>
       </div>
     </Paper>
   );

@@ -11,6 +11,7 @@ export async function getEvent(competitionId: string, eventId: string): Promise<
 
   return Promise.resolve({
     id: eventId,
+    name: '100m Sprint',
     athleteId: '123',
     time: 123.56,
 

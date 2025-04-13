@@ -12,7 +12,8 @@ export async function getResult(resultId: string): Promise<Result | null> {
   return Promise.resolve({
     id: resultId,
     athleteId: '123',
-    time: 123.56
+    eventId: '456',
+    result: '123.56'
   });
 }
 

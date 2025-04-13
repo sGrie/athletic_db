@@ -1,79 +1,20 @@
 'use server';
 
+import { adbGet } from '@/util/api';
+
 import { Competition } from '@/types/types';
 
-const TEST_COMPETITIONS: Competition[] = [
-  {
-    id: '1',
-    name: 'Competition Name',
-    location: 'Location',
-    events: [
-      {
-        id: '1',
-        name: 'Event Name',
-        results: [
-          {
-            id: '1',
-            athleteId: '123',
-            eventId: '1',
-            result: '123.45'
-          }
-        ]
-      },
-      {
-        id: '2',
-        name: 'Event Name 2',
-        results: []
-      }
-    ],
-    date: '2023-10-01'
-  },
-  {
-    id: '3',
-    name: 'Competition Name 3',
-    location: 'Location 2',
-    events: [
-      {
-        id: '3',
-        name: 'Event Name 3',
-        results: [
-          {
-            id: '2',
-            athleteId: '123',
-            eventId: '1',
-            result: '123.45'
-          }
-        ]
-      },
-      {
-        id: '4',
-        name: 'Event Name 4',
-        results: []
-      }
-    ],
-    date: '2025-10-01'
-  }
-];
-
-export async function createCompetition() {
-  // TODO: Create in database.
-}
-
 export async function getCompetition(id: string): Promise<Competition | null> {
-  return Promise.resolve(
-    TEST_COMPETITIONS.find((competition) => {
-      return competition.id === id;
-    }) || null
-  );
+  const response = await adbGet<Competition | null>(`/competitions/${id}`);
+
+  return response.data;
 }
 export async function getCompetitions(): Promise<Competition[]> {
-  return Promise.resolve(TEST_COMPETITIONS);
-}
+  const response = await adbGet<Competition[]>('/competitions');
 
-export async function updateCompetition() {
-  // TODO: Update in database.
-}
+  if (response.code !== 200) {
+    return [];
+  }
 
-export async function deleteCompetition() {
-  // TODO: Delete in database.
+  return response.data;
 }

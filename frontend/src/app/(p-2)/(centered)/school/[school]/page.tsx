@@ -28,7 +28,7 @@ async function SchoolPage({ params }: { params: Promise<{ school: string }> }) {
         />
         <div className='flex flex-col justify-around'>
           <H2>{school.name}</H2>
-          <ProfileCountry country='us' />
+          <ProfileCountry country='US' />
         </div>
       </div>
       <div className='flex flex-wrap mt-2'>

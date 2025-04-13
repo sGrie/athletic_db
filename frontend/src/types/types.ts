@@ -3,32 +3,31 @@
 import { CountryCode } from '@/data/countries';
 
 interface DatabaseEntity {
-  id: string;
+  id: number;
 }
 
 export interface Athlete extends DatabaseEntity {
-  name: string;
+  first_name: string;
+  last_name: string;
   about: string;
-  country: CountryCode;
-  school: School;
+  country_code: CountryCode;
 
-  profilePicture?: string;
-  banner?: string;
+  team: Team;
 }
 
 export interface School extends DatabaseEntity {
+  mascot: string;
   name: string;
-  about: string;
-
-  profilePicture?: string;
-  banner?: string;
 }
 
 export interface Team extends DatabaseEntity {
   name: string;
-  about: string;
+  head_coach: string;
+  conference: string;
+  sport: string;
+  school_id: number;
 
-  profilePicture?: string;
+  school: School;
 }
 
 export interface Result extends DatabaseEntity {
@@ -39,14 +38,21 @@ export interface Result extends DatabaseEntity {
 
 export interface Event extends DatabaseEntity {
   name: string;
-  results: Result[];
+  comp_id: number;
 }
 
 export interface Competition extends DatabaseEntity {
+  event_location: string;
   name: string;
-  location: string;
-  date: string;
+  date: Date;
+
   events: Event[];
+}
+
+export interface EventSubmission extends DatabaseEntity {
+  result: string;
+  event_id: number;
+  athlete_id: number;
 }
 
 export interface NewsArticle extends DatabaseEntity {

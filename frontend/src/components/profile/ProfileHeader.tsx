@@ -14,15 +14,17 @@ function ProfileHeader({ athlete }: { athlete: Athlete }) {
       <div className='flex gap-2'>
         <Image
           src={`https://picsum.photos/500/500?random=${Math.round(Math.random() * 101)}`}
-          alt={athlete.name}
+          alt={`${athlete.first_name} ${athlete.last_name}`}
           width={500}
           height={500}
           className='object-fill w-[100px] h-[100px] rounded-3xl mt-[-30px] z-10 border-4 border-background'
         />
         <div className='flex w-full'>
           <div className='flex-grow'>
-            <p className='text-2xl font-bold'>{athlete.name}</p>
-            <ProfileCountry country={athlete.country} />
+            <p className='text-2xl font-bold'>
+              {athlete.first_name} {athlete.last_name}
+            </p>
+            <ProfileCountry country={athlete.country_code} />
           </div>
           <div className='flex items-center justify-center gap-1'>
             <Button className='flex sm:hidden' size='icon'>
@@ -39,7 +41,7 @@ function ProfileHeader({ athlete }: { athlete: Athlete }) {
       </div>
       <div className='mt-2 flex gap-4 text-gray-700 text-sm'>
         <TextPrefixIcon icon={<School width={16} />}>
-          <Link href={`/school/${athlete.school.id}`}>{athlete.school.name}</Link>
+          <Link href={`/school/${athlete.team.school_id}`}>{athlete.team.school.name}</Link>
         </TextPrefixIcon>
         <TextPrefixIcon icon={<Heart width={16} />}>
           <p>Reading and Writing</p>
