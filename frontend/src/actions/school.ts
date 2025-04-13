@@ -13,5 +13,9 @@ export async function getSchool(id: string): Promise<School | null> {
 export async function getSchools(): Promise<School[]> {
   const response = await adbGet<School[]>('/schools');
 
+  if (response.code !== 200) {
+    return [];
+  }
+
   return response.data;
 }

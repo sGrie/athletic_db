@@ -1,5 +1,3 @@
-// TODO: Update from database schema.
-
 import { CountryCode } from '@/data/countries';
 
 interface DatabaseEntity {

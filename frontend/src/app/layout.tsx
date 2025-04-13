@@ -6,6 +6,8 @@ import Header from '@/components/Header';
 
 import '@/styles/globals.css';
 
+export const fetchCache = 'force-no-store';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin']
