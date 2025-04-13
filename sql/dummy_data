@@ -25,7 +25,7 @@ VALUES (1001, 'Pole Vault', 11),
 (1003, '100m Dash', 12),
 (1004, '100yd Free', 21);
 
-INSERT INTO Event_Submission(id, athlete_id, eventId, result)
+INSERT INTO Event_Submission(id, athlete_id, event_id, result)
 VALUES (888, 1000, 1002, '5.00m'),
 (889, 1000, 1001, '4.52m'),
 (898, 1001, 1004, '39.83s');

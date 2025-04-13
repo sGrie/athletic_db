@@ -34,12 +34,11 @@ CREATE TABLE IF NOT EXISTS Event (
 	id INT PRIMARY KEY,
 	name VARCHAR(20) NOT NULL,
 	comp_id INT REFERENCES Competition(id) NOT NULL
-
 );
 
 CREATE TABLE IF NOT EXISTS Event_Submission (
 	id INT PRIMARY KEY,
 	result VARCHAR(50),
-	eventId INT REFERENCES Event(id),
+	event_id INT REFERENCES Event(id),
 	athlete_id INT REFERENCES Athlete(id)
 );
