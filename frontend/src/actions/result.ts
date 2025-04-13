@@ -6,14 +6,15 @@ export async function createResult() {
   // TODO: Create in database.
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getResult(resultId: string): Promise<Result | null> {
   // TODO: Create in database.
 
   return Promise.resolve({
-    id: resultId,
-    athleteId: '123',
-    eventId: '456',
-    result: '123.56'
+    id: 0,
+    athleteId: 0,
+    eventId: 0,
+    result: '102'
   });
 }
 
@@ -25,10 +26,6 @@ export async function getResultsByAthlete(athleteId: string): Promise<Result[]> 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getTopResultsByEvent(athleteId: string, count: number): Promise<Result[]> {
   return Promise.resolve([]);
-}
-
-export async function updateResult() {
-  // TODO: Update in database.
 }
 
 export async function deleteResult() {

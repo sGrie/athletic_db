@@ -2,18 +2,14 @@
 
 import { Event } from '@/types/types';
 
-export async function createEvent() {
-  // TODO: Create in database.
-}
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getEvent(competitionId: string, eventId: string): Promise<Event | null> {
   // TODO: Call from database.
 
   return Promise.resolve({
-    id: eventId,
-    name: '100m Sprint',
-    athleteId: '123',
-    time: 123.56,
+    id: 12,
+    name: 'Event Name',
+    comp_id: 12,
 
     results: []
   });
@@ -21,12 +17,4 @@ export async function getEvent(competitionId: string, eventId: string): Promise<
 
 export async function getEvents(): Promise<Event[]> {
   return Promise.resolve([]);
-}
-
-export async function updateEvent() {
-  // TODO: Update in database.
-}
-
-export async function deleteEvent() {
-  // TODO: Delete in database.
 }

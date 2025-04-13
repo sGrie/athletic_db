@@ -38,10 +38,12 @@ async function AdminSectionAthletes() {
             return (
               <TableRow key={athlete.id}>
                 <TableCell>
-                  <Link href={`/athlete/${athlete.id}`}>{athlete.name}</Link>
+                  <Link href={`/athlete/${athlete.id}`}>
+                    {athlete.first_name} {athlete.last_name}
+                  </Link>
                 </TableCell>
                 <TableCell>
-                  <Link href={`/school/${athlete.school.id}`}>{athlete.school.name}</Link>
+                  <Link href={`/school/${athlete.team.school_id}`}>{athlete.team.school.name}</Link>
                 </TableCell>
                 <TableCell className='flex justify-end gap-2'>
                   <Button size='icon-sm' variant='ghost'>

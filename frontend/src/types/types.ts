@@ -31,8 +31,8 @@ export interface Team extends DatabaseEntity {
 }
 
 export interface Result extends DatabaseEntity {
-  athleteId: string;
-  eventId: string;
+  athleteId: number;
+  eventId: number;
   result: string;
 }
 

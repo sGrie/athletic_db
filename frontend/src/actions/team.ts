@@ -2,29 +2,25 @@
 
 import { Athlete, Team } from '@/types/types';
 
-export async function createTeam() {
-  // TODO: Create in database.
-}
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getTeam(id: string): Promise<Team | null> {
-  // TODO: Call from database.
-
   return Promise.resolve({
-    id,
+    id: 0,
     name: 'Team Name',
-    about: 'Test description.'
+    head_coach: 'Head Coach',
+    conference: 'Conference',
+    sport: 'Sport',
+    school_id: 1,
+
+    school: {
+      id: 1,
+      mascot: 'Mascot',
+      name: 'School Name'
+    }
   });
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getTeamsBySchool(schoolId: string): Promise<Athlete[]> {
   return Promise.resolve([]);
-}
-
-export async function updateTeam() {
-  // TODO: Update in database.
-}
-
-export async function deleteTeam() {
-  // TODO: Delete in database.
 }
