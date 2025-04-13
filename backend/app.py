@@ -423,14 +423,23 @@ def get_submissions():
 
 @app.route('/events/<int:event_id>/submissions', methods=['GET'])
 def get_submissions_for_event(event_id):
-    subs = EventSubmission.query.filter_by(id=event_id).all()
+    submissions = EventSubmission.query.filter_by(event_id=event_id).all()
+    athletes = Athlete.query.all()
 
     return jsonify([{
         'id': s.id,
         'result': s.result,
         'event_id': s.event_id,
-        'athlete_id': s.athlete_id
-    } for s in subs])
+        'athlete_id': s.athlete_id,
+
+        'athlete': next(({
+            'id': a.id,
+            'first_name': a.first_name,
+            'last_name': a.last_name,
+            'age': a.age,
+            'main_event': a.main_event
+        } for a in athletes if a.id == s.athlete_id), None)
+    } for s in submissions])
 
 @app.route('/teams/<int:team_id>/athletes', methods=['GET'])
 def get_athletes_in_team(team_id):

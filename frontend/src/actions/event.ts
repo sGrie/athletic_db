@@ -1,6 +1,8 @@
 'use server';
 
-import { Event } from '@/types/types';
+import { adbGet } from '@/util/api';
+
+import { Athlete, Event, EventSubmission } from '@/types/types';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getEvent(competitionId: string, eventId: string): Promise<Event | null> {
@@ -17,4 +19,24 @@ export async function getEvent(competitionId: string, eventId: string): Promise<
 
 export async function getEvents(): Promise<Event[]> {
   return Promise.resolve([]);
+}
+
+export async function getEventSubmissions(eventId: string): Promise<
+  (EventSubmission & {
+    athlete: Athlete;
+  })[]
+> {
+  console.log(eventId);
+
+  const response = await adbGet<
+    (EventSubmission & {
+      athlete: Athlete;
+    })[]
+  >(`/events/${eventId}/submissions`);
+
+  if (response.code !== 200) {
+    return [];
+  }
+
+  return response.data;
 }
